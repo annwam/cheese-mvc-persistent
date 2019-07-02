@@ -8,7 +8,9 @@
     <h1 th:text="${title}"></h1>
     <p th:unless="${categories} and ${categories.size()}">No category</p>
     <ul>
-        <li th:each="category : ${categories}" th:text="${category.name}"></li>
+        <li th:each="category : ${categories}">
+            <a th:href="'/cheese/category?id=' + ${category.id}" th:text="${category.name}">      </a>
+        </li>
     </ul>
 
     <a href="/category/add">Add Category</a>
